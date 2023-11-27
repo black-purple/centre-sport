@@ -16,5 +16,4 @@
 <body class="font-sans bg-gray-100">
     <?php
     echo view('InnerPages/header.php');
-    echo view($main_content, $list_reclamation);
-    echo view('InnerPages/footer.php');
+    echo view($main_content);

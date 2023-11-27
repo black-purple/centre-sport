@@ -16,12 +16,12 @@
 
      -->
 <main>
-    <div class="h-96 relative text-white">
+    <div class="h-96 relative text-white ">
         <!-- heroe bg-orange-300 text-white p-40 -->
         <img src="public/img/images/1.jpg" alt="" class="object-cover h-full w-full ">
-        <div class=" p-10 text-center z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-40 rounded-lg">
-            <h1 class="text-4xl font-bold mb-4">Welcome to Sport Club</h1>
-            <p class="text-lg">Experience the thrill of <span class="font-bold text-orange-500 underline underline-offset-2"> Sport Club</span> like never before. Join us on the journey of <span class="font-bold "> "teamwork, dedication, and victory!"</span></p>
+        <div class="p-6 md:p-10 text-center z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-40 rounded-lg w-3/4">
+            <h1 class="text-lg md:text-4xl font-bold mb-2 md:mb-4">Welcome to Sport Club</h1>
+            <p class="text-sm md:text-lg">Experience the thrill of <span class="font-bold text-orange-500 underline underline-offset-2"> Sport Club</span> like never before. Join us on the journey of <span class="font-bold "> "teamwork, dedication, and victory!"</span></p>
         </div>
     </div>
     <!-- CONTENT -->
@@ -35,8 +35,8 @@
                 <?php
                 for ($i = 1; $i <= 6; $i++)
                     echo '<div class="m-4 text-center">
-                    <img src="public/img/images/event' . $i . '.jpg" alt="" class="h-64">
-                    <h3 class="text-sm font-semibold ">Game Day: [Event Name]</h3>
+                    <img src="public/img/images/event' . $i . '.jpg" alt="" class="h-64 rounded-lg shadow-lg">
+                    <h3 class="text-sm font-semibold mt-1 ">Game Day: [Event Name]</h3>
                     <p class="text-xs">Date: [Event Date]</p>
                     <p class="text-xs">Venue: [Event Venue]</p>
                 </div> ' ?>

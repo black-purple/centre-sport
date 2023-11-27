@@ -1,4 +1,4 @@
-<div class="container mx-auto font-sans bg-gray-100 px-64 py-8">
+<form class="container mx-auto font-sans bg-gray-100 px-64 py-8" method="POST">
     <div class="border-b border-gray-900/10 pb-12 ">
         <h2 class="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
         <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
@@ -68,4 +68,4 @@
 
     </div>
     <button type="submit" class="mt-2 flex w-full justify-center rounded-md bg-orange-300 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600">Submit</button>
-</div>
+</form>

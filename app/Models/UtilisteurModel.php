@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Reclamation extends Model
+class UtilisteurModel extends Model
 {
-    protected $table            = 'reclamations';
-    protected $primaryKey       = 'id';
+    protected $table            = 'utilisteurs';
+    protected $primaryKey       = 'NumReclamation';
+    protected $allowedFields    = ['CorpReclamation', 'DateReclamation', 'PseudoNom'];
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
 
     // Dates
     protected $useTimestamps = false;
