@@ -38,9 +38,4 @@ class ReclamationModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-    
-    public function getAllReclamations()
-    {
-        return $this->findAll();
-    }
 }
