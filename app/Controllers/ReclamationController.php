@@ -10,9 +10,9 @@ class ReclamationController extends BaseController
 
     public function index()
     {
-        $data = [];
-        $data['main_content'] = 'Pages/Reclamation';
-        echo view('InnerPages/template', $data);
+        $reclamations = [];
+        $reclamations['main_content'] = 'Pages/Reclamation';
+        echo view('InnerPages/template', $reclamations);
     }
     public function create()
     {
