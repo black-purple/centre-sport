@@ -61,7 +61,7 @@ class MailController extends BaseController
 
                 <p style="color: #555;">Best regards,<br><span style="font-weight:bold;">Sport Club</span></p>
 
-                <img src="cid:logo" alt="Your Logo" style="max-width: 100%; height: auto; margin-top: 20px;">
+                <img src="cid:logo" alt="Your Logo" style="max-width: 100%; height: 60px; margin-top: 20px;">
             </div>
             </body>';
 
@@ -115,7 +115,7 @@ class MailController extends BaseController
                 <p style="color: #555;">If you have any further questions or need additional assistance, feel free to reach out. We\'re here to help! 🤗</p>
 
                 <p style="color: #555;">Best regards,<br><span style="font-weight:bold;">Sport Club</span></p>
-                <img src="cid:logo" alt="Your Logo" style="max-width: 100%; height: 20px; margin-top: 20px;">
+                <img src="cid:logo" alt="Your Logo" style="max-width: 100%; height: 60px; margin-top: 20px;">
             </div>
             </body>';
 

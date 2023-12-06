@@ -13,6 +13,8 @@ $routes->get('/sign-in', 'Auth::signIn');
 $routes->post('/login', 'Auth::login');
 $routes->post('/create', 'Auth::create');
 $routes->get('/logout', 'Auth::logout');
+$routes->get('/profile', 'Auth::update_user');
+
 
 
 
@@ -25,6 +27,8 @@ $routes->post('/reclame/create', 'ReclamationController::create', ['filter' => '
 $routes->put('/reclame/update/(:num)', 'ReclamationController::update/$1');
 $routes->get('/reclame/edit/(:num)', 'ReclamationController::edit/$1');
 $routes->get('/reclame/delete/(:num)', 'ReclamationController::delete/$1');
+
+
 
 // Send Mail (Decline | Accept)
 $routes->get('/send/decline/(:num)', 'MailController::decline/$1');
