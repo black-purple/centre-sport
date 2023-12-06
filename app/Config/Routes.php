@@ -32,7 +32,12 @@ $routes->get('/reclame/delete/(:num)', 'ReclamationController::delete/$1');
 
 // Send Mail (Decline | Accept)
 $routes->get('/send/decline/(:num)', 'MailController::decline/$1');
+$routes->post('/send/decline', 'MailController::decline_reclam');
 $routes->get('/send/accept/(:num)', 'MailController::accept/$1');
+
+// Export Data
+$route['export'] = 'exportController/exportData';
+
 
 // List Reclamation Controller
 $routes->get('/list-reclame', 'ReclamationController::listreclamation', ['filter' => 'auth']);
@@ -40,3 +45,4 @@ $routes->get('/list-reclame', 'ReclamationController::listreclamation', ['filter
 #################### RestFul API Resource #########################endregion
 
 $routes->get('/API/listReclamations', 'RestReclamation::index');
+
