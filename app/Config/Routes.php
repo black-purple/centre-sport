@@ -6,15 +6,23 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'Home::index');
-// Auth Controller 
+ $routes->get('display-table', 'EventController::displayTable_event');
+ $routes->get('/', 'EventController::displayTable_event');
+ $routes->get('/create_event_form', 'EventController::index');
+ $routes->post('/create_event_form', 'EventController::saveEvent');
+ 
+ $routes->delete('EventController/deleteEvent/(:num)', 'EventController::deleteEvent/$1');
+
+ // Auth Controller 
 $routes->get('/sign-up', 'Auth::signUp');
 $routes->get('/sign-in', 'Auth::signIn');
 $routes->post('/login', 'Auth::login');
 $routes->post('/create', 'Auth::create');
 $routes->get('/logout', 'Auth::logout');
+$routes->get('/welcome', 'Home::index');
 
 
+$routes->get('/Events', 'EventController::index');
 
 // Home Controller
 

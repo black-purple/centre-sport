@@ -29,7 +29,7 @@ https://cdn.jsdelivr.net/npm/flowbite@2.2.0/dist/flowbite.min.js
 "></script>
 
     <div class=" mx-auto md:mx-4 p-4 flex items-center justify-between">
-        <a href="<?= base_url('/') ?>">
+        <a href="<?= base_url('/welcome') ?>">
             <img src="<?= "img/svg/logo.svg" ?>" class=" block md:h-20 h-12  h-6 lg:mr-4 md:mr-2" alt="" />
         </a>
 

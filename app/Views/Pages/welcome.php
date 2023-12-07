@@ -7,22 +7,35 @@
         </div>
     </div>
     <!-- CONTENT -->
-    <h2 class="text-2xl font-bold mb-4 text-black underline underline-offset-1 ml-4 md:ml-14 mt-4 " id="Event">Upcoming Events</h2>
+    <div class="relative">
+                    <h2 class="text-2xl font-bold mb-4 text-black underline underline-offset-1 ml-4 md:ml-14 mt-4 " id="Event">Upcoming Events</h2>
+                    
+    <?php
+    if (session()->get('PseudoNom') == "admin") : ?>
+                        <form method="GET" action="<?= site_url('display-table'); ?>">
+                        <button type="submit"  class="absolute top-0 right-0 bg-gray-800 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-8 ">Add events </button>
+</form>
+                    <a href="<?= site_url('/'); ?>"></a>
+                    </div>
+                <?php endif; ?>
 
     <section class="md:container mx-auto md:mt-8 mt-1 px-16">
 
         <!-- Upcoming Events -->
         <div class="mt-2 flex flex-row">
-            <div class="flex flex-wrap justify-center">
-                <?php
-                for ($i = 1; $i <= 6; $i++)
-                    echo '<div class="m-1 mb-2 text-center">
-                    <img src="img/images/event' . $i . '.jpg" alt="" class="h-64 rounded-lg shadow-lg">
-                    <h3 class="text-sm font-semibold mt-1 ">Game Day: [Event Name]</h3>
-                    <p class="text-xs">Date: [Event Date]</p>
-                    <p class="text-xs">Venue: [Event Venue]</p>
-                </div> ' ?>
-            </div>
+        <div class="flex flex-wrap justify-center">
+            <?php foreach ($events as $event): ?>
+            <div class="m-1 mb-2 text-center">
+                 <img src="<?= base_url('img/images/'.$event['image']); ?>" alt="" class="h-64 rounded-lg shadow-lg">
+                 <h3 class="text-sm font-semibold mt-1">Event Name: <?= $event['event_name']; ?></h3>
+                 <p class="text-xs">Date: <?= $event['event_date']; ?></p>
+                 <p class="text-xs">Event Description: <?= $event['event_disc']; ?></p>
+             </div>
+         <?php endforeach; ?>
+
+
+        </div>
+
         </div>
         </div>
     </section>

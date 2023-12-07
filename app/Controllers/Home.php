@@ -3,15 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\ReclamationModel;
+use App\Models\eventmodel;
+
 
 class Home extends BaseController
 {
     public function index()
     {
+        $eventModel = new eventmodel();
+        $data['events'] = $eventModel->getAllEvents();
 
-        $data = [];
         $data['main_content'] = 'Pages/welcome';
-        $data['isFooter'] = True;
-        echo view('InnerPages/template', $data);
+        $data['isFooter'] = true;
+
+        return view('InnerPages/template', $data); // Return the view with data
     }
 }
