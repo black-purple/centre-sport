@@ -33,6 +33,7 @@ https://cdn.jsdelivr.net/npm/flowbite@2.2.0/dist/flowbite.min.js
 "></script>
 
     <div class=" mx-auto md:mx-4 p-4 flex items-center justify-between">
+
         <a href="<?= base_url('/') ?>">
             <img src="<?= "img/svg/logo.svg" ?>" class=" block md:h-20 h-12 lg:mr-4 md:mr-2" alt="" />
         </a>
@@ -54,6 +55,11 @@ https://cdn.jsdelivr.net/npm/flowbite@2.2.0/dist/flowbite.min.js
                 <li>
                     <a href="<?= base_url('/list-reclame') ?>" class="block px-4 py-2  ">List of Reclamation</a>
                 </li>
+                <?php if (session()->get('PseudoNom') == "admin") : ?>
+                <li>
+                    <a href="<?= base_url('/event') ?>" class="block px-4 py-2  ">List of Events</a>
+                </li>
+                <?php endif; ?>
             </ul>
         </div>
         <?php
