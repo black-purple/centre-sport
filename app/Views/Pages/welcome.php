@@ -12,7 +12,7 @@
                     
     <?php
     if (session()->get('PseudoNom') == "admin") : ?>
-                        <form method="GET" action="<?= site_url('display-table'); ?>">
+                        <form method="GET" action="<?= site_url('Event'); ?>">
                         <button type="submit"  class="absolute top-0 right-0 bg-gray-800 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-8 ">Add events </button>
 </form>
                     <a href="<?= site_url('/'); ?>"></a>
@@ -22,19 +22,21 @@
     <section class="md:container mx-auto md:mt-8 mt-1 px-16">
 
         <!-- Upcoming Events -->
-        <div class="mt-2 flex flex-row">
-        <div class="flex flex-wrap justify-center">
-            <?php foreach ($events as $event): ?>
-            <div class="m-1 mb-2 text-center">
-                 <img src="<?= base_url('img/images/'.$event['image']); ?>" alt="" class="h-64 rounded-lg shadow-lg">
-                 <h3 class="text-sm font-semibold mt-1">Event Name: <?= $event['event_name']; ?></h3>
-                 <p class="text-xs">Date: <?= $event['event_date']; ?></p>
-                 <p class="text-xs">Event Description: <?= $event['event_disc']; ?></p>
-             </div>
-         <?php endforeach; ?>
+        <div class="mt-2 justify-center items-center text-center flex flex-row">
 
-
+<div class="flex flex-wrap justify-center">
+    <?php foreach ($events as $event): ?>
+        <div class="m-1 mb-2 flex flex-col items-center justify-center pt-12">
+            <img style="width:200px;" src="<?= base_url('img/images/'.$event['image']); ?>" alt="" >
+            <h3 class="text-sm font-semibold mt-1">Event Name: <?= $event['event_name']; ?></h3>
+            <p class="text-xs">Date: <?= $event['event_date']; ?></p>
+            <p class="text-xs">Event Description: <?= $event['event_disc']; ?></p>
         </div>
+    <?php endforeach; ?>
+</div>
+
+</div>
+
 
         </div>
         </div>

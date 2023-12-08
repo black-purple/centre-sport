@@ -1,5 +1,13 @@
-<div class="flex flex-col justify-center px-6 py-12 lg:px-8 h-[500px] text-xs md:text-sm lg:text-lg mt-14">
-    <h2 class="text-center  md:text-2xl text-lg  font-bold leading-9 tracking-tight text-gray-900">List of <span class="underline underline-offset-3 text-orange-500 ">Reclamation</span></h2>
+<div class="flex flex-col justify-center px-6 py-12 lg:px-8 h-[500px] text-xs md:text-sm lg:text-lg mt-4">
+    <h2 class="text-center  md:text-2xl text-lg  font-bold leading-9 tracking-tight text-gray-900">List of <span class="underline underline-offset-3 text-orange-500 relative">Reclamation</span></h2>
+    <?php if (session()->get('PseudoNom') == "admin") : ?>
+        <div class="flex  justify-end">
+            <button type="submit" class="flex  justify-center rounded-md px-6 py-3 bg-green-500 md:px-3 md:py-1.5  md:text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 mt-1  ">
+                Export Reclamation
+            </button>
+        </div>
+    <?php endif; ?>
+
 
     <div class="mt-8 text-[10px]  md:text-base lg:text-lg ">
         <div class="bg-white border-2 border-orange-500 h-16 w-full rounded-md flex items-center justify-between px-4 gap-1">
@@ -13,7 +21,7 @@
             <?php endif; ?>
 
         </div>
-        <div class="h-96 overflow-auto py-2 rounded-md no-scrollbar space-y-2 ">
+        <div class="h-72 overflow-auto py-2 rounded-md no-scrollbar space-y-2 ">
 
             <?php foreach ($data as $reclam) : ?>
                 <div class="bg-white border-2 border-orange-500 h-auto w-full rounded-md flex items-center justify-between px-4 gap-1 py-4">
@@ -27,13 +35,51 @@
                                     Accept
                                 </a>
                             </button>
-                            <button type="" class="flex w-full justify-center rounded-md bg-red-300 md:px-3 md:py-1.5 px-1 md:text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 mt-[2px] md:mt-0 "><a href="<?php echo base_url("/send/decline/" . $reclam['NumReclamation']); ?>">Decline</a></button>
+                            <button type="" onclick="changefirst1();" class="flex w-full justify-center rounded-md bg-red-300 md:px-3 md:py-1.5 px-1 md:text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 mt-[2px] md:mt-0 "><a href="
+                            ">Decline</a></button>
                         </div>
+                        <!-- <?php echo base_url("/send/decline/" . $reclam['NumReclamation']); ?> -->
+
                     <?php endif; ?>
                 </div>
-            <?php endforeach; ?>
+<?php endforeach; ?>
+
+
+
+
         </div>
-
-
     </div>
 </div>
+
+</div>
+
+
+</div>
+</div>
+
+
+<!-- script -->
+<script>
+    var isButtonVisible = true;
+
+    function changefirst1() {
+        event.preventDefault();
+        var c = document.getElementById("open1");
+        // c.style.display = "block";
+        // var button = document.getElementById("myButton");
+
+        if (isButtonVisible) {
+            c.style.display = "none";
+        } else {
+            c.style.display = "block";
+        }
+
+        // Toggle the state
+        isButtonVisible = !isButtonVisible;
+    }
+
+    function changefirst() {
+        var c = document.getElementById("open1");
+        c.style.display = "none";
+    }
+</script>

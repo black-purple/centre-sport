@@ -97,4 +97,12 @@ class Auth extends BaseController
         session()->destroy();
         return redirect()->to(base_url('/sign-in'));
     }
+
+    public function update_user()
+    {
+        $data = [];
+        $data['main_content'] = 'Pages/Profile';
+        $data['isFooter'] = False;
+        echo view('InnerPages/template', $data);
+    }
 }
