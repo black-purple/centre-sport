@@ -18,7 +18,15 @@ $routes->get('/profile', 'Auth::update_user');
 
 
 
-// Home Controller
+// Event Controller
+$routes->get('/event', 'EventController::display_event');
+$routes->get('/create_event_form', 'EventController::index');
+$routes->post('/create_event_form', 'EventController::saveEvent');
+$routes->get('deleteEvent/(:num)', 'EventController::deleteEvent/$1');
+$routes->get('editEvent/(:num)', 'EventController::editEvent/$1');
+$routes->put('updateEvent/(:num)', 'EventController::update/$1');
+
+
 
 // Reclamation Controller
 $routes->get('/reclame', 'ReclamationController::index', ['filter' => 'auth']);

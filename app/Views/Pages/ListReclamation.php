@@ -2,7 +2,7 @@
     <h2 class="text-center  md:text-2xl text-lg  font-bold leading-9 tracking-tight text-gray-900">List of <span class="underline underline-offset-3 text-orange-500 relative">Reclamation</span></h2>
     <?php if (session()->get('PseudoNom') == "admin") : ?>
         <div class="flex  justify-end">
-            <button type="submit" class="flex  justify-center rounded-md px-6 py-3 bg-green-500 md:px-3 md:py-1.5  md:text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 mt-1  ">
+            <button type="submit" class="flex  justify-center rounded-md px-2 py-1 bg-green-500 md:px-3 md:py-1.5 text-xs  md:text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 mt-1  ">
                 <a href="<?= base_url('/export') ?>">
                     Export Reclamation
                 </a>
