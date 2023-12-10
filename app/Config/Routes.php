@@ -13,7 +13,6 @@ $routes->get('/sign-in', 'Auth::signIn');
 $routes->post('/login', 'Auth::login');
 $routes->post('/create', 'Auth::create');
 $routes->get('/logout', 'Auth::logout');
-$routes->get('/profile', 'Auth::update_user');
 
 
 
@@ -43,11 +42,22 @@ $routes->get('/send/decline/(:num)', 'MailController::decline/$1');
 $routes->post('/send/decline', 'MailController::decline_reclam');
 $routes->get('/send/accept/(:num)', 'MailController::accept/$1');
 
-$routes->get('/export', 'ExcelController::exportData');
+$routes->get('/exportpdf', 'ExportController::exportDatapdf');
+$routes->get('/export', 'ExportController::exportData');
+
 
 
 // Export Data
 // $route['export'] = 'exportController/exportData';
+
+// profile Controller
+$routes->get('/profile', 'ProfileController::index');
+$routes->post('/profile/edit_info', 'ProfileController::update_info');
+$routes->post('/profile/edit_password', 'ProfileController::update_password');
+$routes->get('/profile/destroy', 'ProfileController::destroy');
+$routes->post('/profile/upload_image', 'ProfileController::upload_image');
+
+
 
 
 // List Reclamation Controller

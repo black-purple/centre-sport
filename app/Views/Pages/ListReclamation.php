@@ -2,13 +2,25 @@
     <h2 class="text-center  md:text-2xl text-lg  font-bold leading-9 tracking-tight text-gray-900">List of <span class="underline underline-offset-3 text-orange-500 relative">Reclamation</span></h2>
     <?php if (session()->get('PseudoNom') == "admin") : ?>
         <div class="flex  justify-end">
-            <button type="submit" class="flex  justify-center rounded-md px-2 py-1 bg-green-500 md:px-3 md:py-1.5 text-xs  md:text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 mt-1  ">
-                <a href="<?= base_url('/export') ?>">
-                    Export Reclamation
-                </a>
+            <button type="submit" class="flex  justify-center rounded-md px-2 py-1 bg-green-500 md:px-3 md:py-1.5 text-xs  md:text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 mt-1" id="dropdownDefaultButton1" data-dropdown-toggle="dropdown1">
+                Export Reclamation
             </button>
         </div>
     <?php endif; ?>
+    <div id="dropdown1" class="z-4 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700 text-center">
+        <ul class="py-2 text-xs md:text-md text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton1">
+            <?php
+            if (session()->get('PseudoNom') != null) {
+                if (session()->get('PseudoNom') == "admin") {
+                    echo '
+                 <li class="menu-item  py-2 px-4 text-gray-800  "><a href="' . base_url('/export') . '" class="">Export as xlxs</a></li>
+                <li class="menu-item  py-2 px-4 text-gray-800  "><a href="' . base_url('/exportpdf') . '" class="">Export as PDF</a></li>';
+                }
+            } ?>
+
+
+        </ul>
+    </div>
 
 
     <div class="mt-8 text-[10px]  md:text-base lg:text-lg ">
@@ -43,10 +55,14 @@
                         <!-- <?php echo base_url("/send/decline/" . $reclam['NumReclamation']); ?> -->
 
                     <?php endif; ?>
+
                 </div>
             <?php endforeach; ?>
+
         </div>
+
     </div>
+
 </div>
 
 <form class=" font-sans bg-gray-100  md:py-2 px-3 py-2 mx-4" onsubmit="return validateForm()" action="<?= base_url('/send/decline') ?>" method="POST">
@@ -62,6 +78,7 @@
         </button>
     </div>
 </form>
+
 
 
 </div>

@@ -1,4 +1,6 @@
 <header class="bg-white border-b border-gray-300">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.2.0/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Mobile phone -->
     <div id="toggle" class="z-4 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700 text-center">
         <ul class="py-2 text-xs md:text-md text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButtontoggle">
@@ -33,10 +35,6 @@
         </ul>
     </div>
 
-    <script src="
-https://cdn.jsdelivr.net/npm/flowbite@2.2.0/dist/flowbite.min.js
-"></script>
-
     <div class=" mx-auto md:mx-4 p-4 flex items-center justify-between">
 
         <a href="<?= base_url('/') ?>">
@@ -50,16 +48,20 @@ https://cdn.jsdelivr.net/npm/flowbite@2.2.0/dist/flowbite.min.js
         <!-- Dropdown menu -->
         <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                <li>
+                    <a href="<?= base_url('/list-reclame') ?>" class="block px-4 py-2  ">List of Reclamation</a>
+                </li>
                 <?php if (session()->get('PseudoNom') != "admin") : ?>
 
                     <li>
                         <a href="<?= base_url('/reclame') ?>" class="block px-4 py-2 ">Add Reclamation</a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('/profile') ?>" class="block px-4 py-2 "> Profile</a>
+                    </li>
                 <?php endif; ?>
 
-                <li>
-                    <a href="<?= base_url('/list-reclame') ?>" class="block px-4 py-2  ">List of Reclamation</a>
-                </li>
+
                 <?php if (session()->get('PseudoNom') == "admin") : ?>
                     <li>
                         <a href="<?= base_url('/event') ?>" class="block px-4 py-2  ">List of Events</a>
